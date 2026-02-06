@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 🚨 Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLH9GD9SVR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JLH9GD9SVR');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[투어메이커] 취향대로 떠나는 대만 여행 (관광형 vs 자유형)</title>
+    
+    <!-- 🚨 Open Graph: 카톡 공유시 보여질 썸네일 -->
+    <meta property="og:title" content="[투어메이커] 대만/타이페이 4일 : 당신의 선택은?">
+    <meta property="og:description" content="2026.05.21(목) 출발 | 아시아나(관광형) vs 대한항공(1일자유) | 노쇼핑 & 특식 포함">
+    <meta property="og:image" content="https://media.gettyimages.com/id/1973430638/photo/scenery-of-raohe-street-night-market-with-a-crowd-of-people-visiting.jpg?s=612x612&w=0&k=20&c=oaMvGSCRNa6NEqMguGWY1r96si6uJjG08Mp0_h0sgFc=">
+    <meta property="og:url" content="https://tourmaker.kr">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <style>
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            background-color: #fff7ed; /* Light Orange/Beige Background */
+            color: #431407; 
+        }
+        
+        /* Hero Background: Jiufen */
+        .hero-bg-taiwan { 
+            background: linear-gradient(rgba(67, 20, 7, 0.4), rgba(67, 20, 7, 0.6)), url('https://images.unsplash.com/photo-1470004914212-05527e49370b?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        } 
+        
+        /* Navigation Active State */
+        .nav-link.active { color: #ea580c; font-weight: 700; border-bottom: 2px solid #ea580c; }
+        
+        /* Comparison Cards */
+        .card-vs { transition: all 0.3s ease; border: 1px solid rgba(234, 88, 12, 0.1); }
+        .card-vs:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border-color: #ea580c; }
+
+        /* Scroll Anchor Offset */
+        section { scroll-margin-top: 70px; }
+
+        /* Scrollbar Hide */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Animation */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    </style>
+</head>
+<body class="antialiased pb-20 md:pb-0">
+
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Badges Area -->
+                <div class="flex items-center gap-2 md:gap-3">
+                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEitI-Z-hD82keOJ1AqHw-VTZjpw2U-O5UjtV9h3zblyG0wjsVfBWe9X9o0Q_Spctrt7krkd9qXO0xKTmGJLw4gyMZrRqpshKMFttnyx6OcC8-IGz3XLUZpGQOnRqVdol8jz5HuoDLqsEifnVRhcjUJHm13Sz8JrX9aPswMNUwZPvGtJEnQjhc2PiXlo-B8" alt="Tourmaker" class="h-8 md:h-10 w-auto">
+                    
+                    <!-- D-Day Badge -->
+                    <span id="d-day-badge" class="hidden bg-orange-600 text-white text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full shadow-md animate-pulse">
+                        <!-- D-Day inserted by JS -->
+                    </span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
+                    <a href="#home" class="nav-link">홈</a>
+                    <a href="#compare" class="nav-link text-orange-600 font-bold">상품비교</a>
+                    <a href="#guide" class="nav-link">항공/미팅</a>
+                    <a href="#timeline" class="nav-link">상세일정</a>
+                    <a href="#check" class="nav-link">체크리스트</a>
+                </div>
+
+                <!-- Share Button -->
+                <button onclick="shareLink()" class="text-slate-500 hover:text-orange-600 transition-colors p-2 active:scale-90 transform">
+                    <i class="fa-solid fa-share-nodes text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="home" class="hero-bg-taiwan min-h-[85vh] flex items-center justify-center text-center px-4 relative scroll-mt-0">
+            <div class="z-10 text-white max-w-5xl w-full animate-fade-in-up flex flex-col items-center">
+                
+                <div class="flex flex-col items-center gap-2 mb-4">
+                    <span class="bg-orange-600 text-white text-xs md:text-sm font-bold px-4 py-1.5 rounded-full shadow-lg border border-white/30 tracking-wide">
+                        5월의 황금연휴 추천
+                    </span>
+                    <p class="text-orange-200 font-medium text-sm md:text-base tracking-widest uppercase">TAIPEI SPECIAL 2026</p>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-[Nanum Myeongjo] font-bold leading-tight text-white drop-shadow-xl mb-4">
+                    미식과 낭만의 도시<br>대만의 두 가지 매력
+                </h1>
+
+                <p class="text-base md:text-lg text-slate-200 mb-8 font-light tracking-wide max-w-2xl">
+                    2026.05.21 (목) 출발 | 3박 4일<br>
+                    <span class="font-bold text-white">알찬 관광형(아시아나)</span> vs <span class="font-bold text-white">여유로운 자유형(대한항공)</span>
+                </p>
+
+                <!-- Key Selling Points -->
+                <div class="flex flex-wrap justify-center gap-3 w-full max-w-3xl mb-10">
+                    <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs md:text-sm border border-white/30">✨ 노쇼핑 보장</span>
+                    <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs md:text-sm border border-white/30">✈️ 국적기 탑승</span>
+                    <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs md:text-sm border border-white/30">🍜 딘타이펑/특식</span>
+                    <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs md:text-sm border border-white/30">🏮 지우펀/스펀</span>
+                </div>
+
+                <div class="animate-bounce mt-4">
+                    <a href="#compare" class="text-white/80 hover:text-white transition-colors">
+                        <i class="fa-solid fa-chevron-down text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Comparison Section (New Feature) -->
+        <section id="compare" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <span class="text-orange-600 font-bold tracking-wider uppercase text-sm">Which Style?</span>
+                    <h2 class="text-3xl font-bold mt-2 text-slate-800">나에게 맞는 여행 스타일은?</h2>
+                    <p class="text-slate-500 mt-2">두 가지 프리미엄 옵션을 비교해보세요.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Option A: Asiana -->
+                    <div class="card-vs bg-white rounded-2xl p-6 shadow-lg flex flex-col relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-bl-lg z-10">Best Seller</div>
+                        <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden">
+                            <!-- A코스 사진 반영 -->
+                            <img src="https://media.gettyimages.com/id/1973430638/photo/scenery-of-raohe-street-night-market-with-a-crowd-of-people-visiting.jpg?s=612x612&w=0&k=20&c=oaMvGSCRNa6NEqMguGWY1r96si6uJjG08Mp0_h0sgFc=" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Full Package">
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-slate-800">Type A. 알찬 관광형</h3>
+                            <span class="text-lg font-bold text-orange-600">949,900원~</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-600 flex-grow mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-plane text-orange-500"></i> <strong>아시아나(OZ)</strong> 오전출발/오후리턴</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-orange-500"></i> 타오위안 4성급 호텔 (가성비)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-orange-500"></i> <strong>단수이(말할수없는비밀)</strong> 포함</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-orange-500"></i> 101타워 전망대 <strong class="text-red-500">포함</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-utensils text-orange-500"></i> 특식 4회 제공 (풀코스)</li>
+                        </ul>
+                        <button onclick="document.getElementById('day1').click(); document.getElementById('timeline').scrollIntoView();" class="w-full bg-slate-800 text-white py-3 rounded-lg font-bold hover:bg-slate-700 transition">A코스 일정 보기</button>
+                    </div>
+
+                    <!-- Option B: Korean Air -->
+                    <div class="card-vs bg-white rounded-2xl p-6 shadow-lg flex flex-col relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">City Hotel</div>
+                        <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden">
+                            <!-- B코스 사진 반영 -->
+                            <img src="https://media.gettyimages.com/id/804328234/photo/joyful-young-lady-taking-pictures-of-beautiful-scenics-in-park-with-smartphone-during-sunset.jpg?s=612x612&w=0&k=20&c=1aE5_EN0Ro1LsZ-FUnhYi4IY7pU9OHWbt4UB-Gm0zZc=" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Free Day">
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-slate-800">Type B. 1일 자유형</h3>
+                            <span class="text-lg font-bold text-orange-600">1,039,900원~</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-600 flex-grow mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-plane text-sky-500"></i> <strong>대한항공(KE)</strong> 오후출발/저녁리턴</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-sky-500"></i> <strong>타이페이 시내</strong> 4성급 (이동편리)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-person-walking text-sky-500"></i> <strong>3일차 전일 자유일정</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-sky-500"></i> 101타워 불포함 (선택가능)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-utensils text-sky-500"></i> 특식 2회 + 자유식의 즐거움</li>
+                        </ul>
+                        <button onclick="document.getElementById('day1').click(); document.getElementById('timeline').scrollIntoView();" class="w-full bg-slate-100 text-slate-800 border border-slate-300 py-3 rounded-lg font-bold hover:bg-slate-200 transition">B코스 일정 보기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Airport Info (Guide) -->
+        <section id="guide" class="py-16 bg-orange-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800">항공 스케줄 및 미팅</h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-sm border border-orange-100 overflow-hidden">
+                    <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                        <!-- Asiana -->
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded">Type A</span>
+                                <h3 class="font-bold text-lg">아시아나 항공 (OZ)</h3>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center text-sm">
+                                    <div class="text-center">
+                                        <span class="block font-bold text-slate-800">05/21 (목) 10:00</span>
+                                        <span class="text-xs text-slate-500">인천 출발</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right text-slate-300"></i>
+                                    <div class="text-center">
+                                        <span class="block font-bold text-slate-800">11:30</span>
+                                        <span class="text-xs text-slate-500">타이페이 도착</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <div class="text-center">
+                                        <span class="block font-bold text-slate-800">05/24 (일) 12:55</span>
+                                        <span class="text-xs text-slate-500">타이페이 출발</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right text-slate-300"></i>
+                                    <div class="text-center">
+                                        <span class="block font-bold text-slate-800">16:30</span>
+                                        <span class="text-xs text-slate-500">인천 도착</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Korean Air -->
+                        <div class="p-6 bg-slate-50/50">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="bg-sky-500 text-white text-xs font-bold px-2 py-1 rounded">Type B</span>
+                                <h3 class="font-bold text-lg">대한항공 (KE)</h3>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center text-sm">
+                                    <div class="text-center">
+                                        <span class="block font-bold text-slate-800">05/21 (목) 16:10</span>
+                                        <span class="text-xs text-slate-500">인천 출발</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right text-slate-300"></i>
+                                    <div class="text-center">
+                                        <span class="block font-bold text-slate-800">17:50</span>
+                                        <span class="text-xs text-slate-500">타이페이 도착</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <div class="text-center">
+                                        <span class="block font-bold text-slate-800">05/24 (일) 18:55</span>
+                                        <span class="text-xs text-slate-500">타이페이 출발</span>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right text-slate-300"></i>
+                                    <div class="text-center">
+                                        <span class="block font-bold text-slate-800">22:35</span>
+                                        <span class="text-xs text-slate-500">인천 도착</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 text-white text-xs p-3 text-center">
+                        <i class="fa-solid fa-bullhorn mr-1"></i> 미팅 장소: 인천공항 제2터미널 (Type B), 제1터미널 (Type A) - 확정 시 안내
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Itinerary Timeline -->
+        <section id="timeline" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800">일자별 상세 일정</h2>
+                    <p class="text-sm text-slate-500 mt-1">탭을 눌러 상세 내용을 확인하세요.</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex overflow-x-auto no-scrollbar gap-2 mb-6 max-w-3xl mx-auto px-1">
+                    <button class="tab-btn active flex-1 min-w-[80px] py-3 rounded-xl border border-slate-200 bg-white font-bold text-slate-600 text-sm hover:bg-orange-50 transition" onclick="openTab(event, 'day1')">1일차<br><span class="text-xs font-normal">5/21(목)</span></button>
+                    <button class="tab-btn flex-1 min-w-[80px] py-3 rounded-xl border border-slate-200 bg-white font-bold text-slate-600 text-sm hover:bg-orange-50 transition" onclick="openTab(event, 'day2')">2일차<br><span class="text-xs font-normal">5/22(금)</span></button>
+                    <button class="tab-btn flex-1 min-w-[80px] py-3 rounded-xl border border-slate-200 bg-white font-bold text-slate-600 text-sm hover:bg-orange-50 transition" onclick="openTab(event, 'day3')">3일차<br><span class="text-xs font-normal">5/23(토)</span></button>
+                    <button class="tab-btn flex-1 min-w-[80px] py-3 rounded-xl border border-slate-200 bg-white font-bold text-slate-600 text-sm hover:bg-orange-50 transition" onclick="openTab(event, 'day4')">4일차<br><span class="text-xs font-normal">5/24(일)</span></button>
+                </div>
+
+                <div class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-orange-100 min-h-[400px]">
+                    
+                    <!-- Day 1 -->
+                    <div id="day1" class="tab-content animate-fade-in-up">
+                        <h3 class="font-bold text-lg mb-4 text-slate-800 border-b pb-2">대만 입국 및 시내 관광</h3>
+                        
+                        <!-- Type A Schedule -->
+                        <div class="mb-6 relative pl-4 border-l-4 border-yellow-400">
+                            <span class="text-xs font-bold text-yellow-600 mb-1 block">Type A (아시아나)</span>
+                            <ul class="space-y-3 text-sm">
+                                <li><strong>11:30</strong> 타이페이 도착 후 가이드 미팅</li>
+                                <li>🍜 <strong>중식 (기내식/현지식)</strong></li>
+                                <li>✨ <strong>국립고궁박물관</strong>: 세계 4대 박물관, 70만점의 보물</li>
+                                <li>🏯 <strong>용산사</strong>: 타이페이에서 가장 오래된 사원</li>
+                                <li>🏙️ <strong>101타워 전망대</strong>: 대만의 랜드마크 야경 감상 (포함)</li>
+                                <li>🌙 <strong>스린야시장</strong>: 대만 최대 야시장 체험</li>
+                                <li>🏩 투숙: 타오위안 지역 4성 호텔</li>
+                            </ul>
+                        </div>
+
+                        <!-- Type B Schedule -->
+                        <div class="relative pl-4 border-l-4 border-sky-400">
+                            <span class="text-xs font-bold text-sky-600 mb-1 block">Type B (대한항공)</span>
+                            <ul class="space-y-3 text-sm">
+                                <li><strong>17:50</strong> 타이페이 도착 후 가이드 미팅</li>
+                                <li>🥟 <strong>석식 (딤섬 특식)</strong></li>
+                                <li>🏩 투숙: <strong>타이페이 시내 4성 호텔</strong> (FX Hotel 등)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div id="day2" class="tab-content hidden animate-fade-in-up">
+                        <h3 class="font-bold text-lg mb-4 text-slate-800 border-b pb-2">예스지(예류/스펀/지우펀) 핵심 투어</h3>
+                        <p class="text-sm text-slate-500 mb-4">※ 두 상품 모두 대만 여행의 하이라이트인 예스지 투어를 진행합니다.</p>
+                        
+                        <ul class="space-y-6 border-l-2 border-slate-100 ml-2 pl-6">
+                            <li class="relative">
+                                <span class="absolute -left-[31px] top-1 w-4 h-4 bg-orange-500 rounded-full"></span>
+                                <h4 class="font-bold text-slate-800">예류 지질공원</h4>
+                                <p class="text-sm text-slate-600 mt-1">자연이 빚은 기암괴석, 여왕머리바위와 함께 인생샷</p>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[31px] top-1 w-4 h-4 bg-orange-500 rounded-full"></span>
+                                <h4 class="font-bold text-slate-800">스펀 천등 날리기</h4>
+                                <p class="text-sm text-slate-600 mt-1">철길 위에서 소원을 적어 하늘로 띄우는 낭만 (4인 1조)</p>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[31px] top-1 w-4 h-4 bg-orange-500 rounded-full"></span>
+                                <h4 class="font-bold text-slate-800">지우펀</h4>
+                                <p class="text-sm text-slate-600 mt-1">센과 치히로의 행방불명 배경지, 붉은 홍등 거리 산책</p>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[31px] top-1 w-4 h-4 bg-yellow-500 rounded-full"></span>
+                                <p class="font-bold text-yellow-800">식사 하이라이트</p>
+                                <p class="text-sm text-slate-600">중식(해산물 현지식) / 석식(무제한 샤브샤브)</p>
+                            </li>
+                            <!-- Type B Special -->
+                            <li class="relative bg-sky-50 p-3 rounded-lg border border-sky-100">
+                                <span class="text-xs font-bold text-sky-600 block mb-1">Type B 추가 일정</span>
+                                <p class="text-sm text-slate-700"><strong>스린야시장</strong> 방문 (Type A는 1일차 진행)</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div id="day3" class="tab-content hidden animate-fade-in-up">
+                        <h3 class="font-bold text-lg mb-4 text-slate-800 border-b pb-2">선택의 날: 단수이 vs 자유일정</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Type A -->
+                            <div class="border border-yellow-200 bg-yellow-50 rounded-lg p-4">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="bg-yellow-400 text-white text-xs px-2 py-1 rounded font-bold">Type A</span>
+                                    <h4 class="font-bold text-slate-800">단수이 & 시내 관광</h4>
+                                </div>
+                                <ul class="text-sm text-slate-700 space-y-2 list-disc pl-4">
+                                    <li><strong>단수이:</strong> 영화 '말할 수 없는 비밀' 촬영지</li>
+                                    <li><strong>홍마오청:</strong> 붉은 벽돌의 이국적인 요새</li>
+                                    <li><strong>중정기념당:</strong> 장개석 총통 기념관 및 교대식</li>
+                                    <li><strong>서문정:</strong> 대만의 명동 거리</li>
+                                    <li>식사: 조/중/석식 모두 포함 (한식 등)</li>
+                                </ul>
+                            </div>
+
+                            <!-- Type B -->
+                            <div class="border border-sky-200 bg-sky-50 rounded-lg p-4">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="bg-sky-500 text-white text-xs px-2 py-1 rounded font-bold">Type B</span>
+                                    <h4 class="font-bold text-slate-800">전일 자유 일정</h4>
+                                </div>
+                                <p class="text-sm text-slate-600 mb-3">가이드/차량 없이 자유롭게 즐기는 하루!</p>
+                                <div class="text-xs text-slate-500 bg-white p-3 rounded border border-sky-100">
+                                    <strong>추천 코스:</strong><br>
+                                    1. 융캉제 (맛집/카페 투어)<br>
+                                    2. 베이터우 온천 (힐링)<br>
+                                    3. 화산 1914 (문화예술단지)<br>
+                                    ※ 중/석식 불포함 (맛집 탐방 기회)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div id="day4" class="tab-content hidden animate-fade-in-up">
+                        <h3 class="font-bold text-lg mb-4 text-slate-800 border-b pb-2">귀국</h3>
+                        
+                        <!-- Type A -->
+                        <div class="mb-4 pb-4 border-b border-slate-100">
+                            <span class="text-xs font-bold text-yellow-600 mb-1 block">Type A (아시아나)</span>
+                            <ul class="text-sm text-slate-700 space-y-1">
+                                <li>조식 후 공항 이동</li>
+                                <li><strong>12:55</strong> 타이페이 출발 (기내식)</li>
+                                <li><strong>16:30</strong> 인천 도착</li>
+                            </ul>
+                        </div>
+
+                        <!-- Type B -->
+                        <div>
+                            <span class="text-xs font-bold text-sky-600 mb-1 block">Type B (대한항공)</span>
+                            <ul class="text-sm text-slate-700 space-y-1">
+                                <li>조식 후 오전 자유시간 및 체크아웃</li>
+                                <li><strong>국립고궁박물관</strong> 관람 (Type A는 1일차 진행)</li>
+                                <li><strong>중정기념당</strong> 관람 (Type A는 3일차 진행)</li>
+                                <li><strong>18:55</strong> 타이페이 출발 (기내식)</li>
+                                <li><strong>22:35</strong> 인천 도착</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Mode Tour Original Links (Added) -->
+                <div class="max-w-3xl mx-auto mt-6">
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                        <div class="text-center mb-4">
+                            <p class="font-bold text-slate-800 text-sm"><i class="fa-solid fa-circle-info text-slate-400 mr-1"></i>상세 정보 더보기</p>
+                            <p class="text-xs text-slate-500 mt-1">더 자세한 포함/불포함 사항 및 약관은 원문 일정표를 참고하세요.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <!-- Type A Link -->
+                            <a href="https://www.modetour.com/package/ADP903OZM4" target="_blank" class="flex flex-col items-center justify-center p-3 rounded-lg border border-yellow-300 bg-yellow-50 hover:bg-yellow-100 transition group shadow-sm">
+                                <span class="text-[10px] font-bold text-yellow-700 bg-yellow-200 px-2 py-0.5 rounded-full mb-1">Type A (아시아나)</span>
+                                <span class="text-slate-700 font-bold text-xs md:text-sm group-hover:text-slate-900">
+                                    원문 일정표 확인 <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                                </span>
+                            </a>
+                            <!-- Type B Link -->
+                            <a href="https://www.modetour.com/package/ADP903KEG6" target="_blank" class="flex flex-col items-center justify-center p-3 rounded-lg border border-sky-300 bg-sky-50 hover:bg-sky-100 transition group shadow-sm">
+                                <span class="text-[10px] font-bold text-sky-700 bg-sky-200 px-2 py-0.5 rounded-full mb-1">Type B (대한항공)</span>
+                                <span class="text-slate-700 font-bold text-xs md:text-sm group-hover:text-slate-900">
+                                    원문 일정표 확인 <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Video Section -->
+        <section class="py-16 bg-slate-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8 text-white">
+                    <h2 class="text-2xl font-bold">🇹🇼 Time for Taiwan</h2>
+                    <p class="text-slate-400 text-sm mt-1">대만의 아름다운 풍경을 미리 만나보세요.</p>
+                </div>
+                <!-- YouTube Video Updated -->
+                <div class="max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-700 relative group">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/X2iPm7GITyM" title="Taiwan Tourism Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Checklist -->
+        <section id="check" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-bold text-slate-800">여행 체크리스트</h2>
+                    <p class="text-sm text-slate-500 mt-1">대만 여행 필수 준비물 확인하기</p>
+                </div>
+
+                <div class="max-w-2xl mx-auto bg-orange-50 p-6 rounded-2xl border border-orange-200">
+                    <div id="checklist-container" class="space-y-3">
+                        <!-- Checkboxes inserted by JS -->
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-orange-200 text-xs text-slate-500">
+                        <i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> 전압: 대만은 110V를 사용합니다. (돼지코 필수)<br>
+                        <i class="fa-solid fa-passport text-blue-500 mr-1"></i> 여권 유효기간: 출발일 기준 6개월 이상 필수
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Updated -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm border-t border-slate-800 mb-14 md:mb-0">
+        <div class="container mx-auto px-4">
+            
+            <!-- Homepage Shortcut -->
+            <a href="https://tourmaker.kr" target="_blank" class="inline-block bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full mb-8 transition-colors shadow-lg border border-orange-500 animate-pulse">
+                <i class="fa-solid fa-globe mr-2"></i>투어메이커 공식 홈페이지 바로가기
+            </a>
+
+            <!-- Logo & Partners -->
+            <div class="flex justify-center items-center gap-6 mb-8 opacity-80">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEitI-Z-hD82keOJ1AqHw-VTZjpw2U-O5UjtV9h3zblyG0wjsVfBWe9X9o0Q_Spctrt7krkd9qXO0xKTmGJLw4gyMZrRqpshKMFttnyx6OcC8-IGz3XLUZpGQOnRqVdol8jz5HuoDLqsEifnVRhcjUJHm13Sz8JrX9aPswMNUwZPvGtJEnQjhc2PiXlo-B8" alt="Tourmaker" class="h-8 w-auto grayscale hover:grayscale-0 transition">
+                <span class="text-xl text-slate-600 font-light">|</span>
+                <span class="text-xl font-bold text-slate-300">MODETOUR</span>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-2">
+                <p class="text-slate-500">
+                    본 상품은 모두투어와 제휴된 투어메이커가 판매 및 관리를 담당합니다.<br>
+                    여행문의: 주식회사 투어메이커
+                </p>
+                <p class="text-[10px] text-slate-600 mt-4">
+                    &copy; 2026 Tourmaker. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Nav (Mobile) -->
+    <div class="md:hidden fixed bottom-0 w-full bg-white/95 backdrop-blur border-t border-slate-200 flex justify-around py-3 z-50 text-[10px] text-slate-500 font-medium shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+        <a href="#home" class="flex flex-col items-center gap-1 hover:text-orange-600"><i class="fa-solid fa-house text-lg"></i>홈</a>
+        <a href="#compare" class="flex flex-col items-center gap-1 hover:text-orange-600 text-orange-500"><i class="fa-solid fa-scale-balanced text-lg"></i>비교</a>
+        <a href="#timeline" class="flex flex-col items-center gap-1 hover:text-orange-600"><i class="fa-regular fa-calendar-days text-lg"></i>일정</a>
+        <a href="#check" class="flex flex-col items-center gap-1 hover:text-orange-600"><i class="fa-solid fa-check-to-slot text-lg"></i>준비</a>
+    </div>
+
+    <script>
+        // 1. D-Day Logic (Target: 2026-05-21)
+        function updateDday() {
+            const ddayBadge = document.getElementById('d-day-badge');
+            const now = new Date().getTime();
+            const start = new Date('2026-05-21T00:00:00').getTime();
+            
+            const distance = start - now;
+            const days = Math.ceil(distance / (1000 * 60 * 60 * 24));
+
+            if (ddayBadge) {
+                if (distance > 0) {
+                    ddayBadge.innerText = "D-" + days;
+                    ddayBadge.classList.remove('hidden');
+                } else {
+                    ddayBadge.innerText = "여행임박/출발";
+                    ddayBadge.classList.remove('hidden');
+                }
+            }
+        }
+        updateDday();
+
+        // 2. Share Function
+        function shareLink() {
+            const url = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: '[투어메이커] 대만 여행 가이드',
+                    text: '아시아나(꽉찬일정) vs 대한항공(자유일정) 비교하기',
+                    url: url
+                }).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(url).then(() => alert('주소가 복사되었습니다.')).catch(() => alert('복사 실패'));
+            }
+        }
+
+        // 3. Tabs Logic
+        function openTab(evt, tabName) {
+            var i, tabContent, tabBtns;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabBtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].className = tabBtns[i].className.replace(" active", "");
+                // Reset styling
+                tabBtns[i].classList.remove("border-orange-500", "text-orange-600", "bg-orange-50");
+                tabBtns[i].classList.add("border-slate-200", "text-slate-600", "bg-white");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+            
+            // Add active styling
+            evt.currentTarget.classList.remove("border-slate-200", "text-slate-600", "bg-white");
+            evt.currentTarget.classList.add("border-orange-500", "text-orange-600", "bg-orange-50");
+        }
+        // Default Open
+        document.getElementById("day1").style.display = "block";
+        document.getElementsByClassName("tab-btn")[0].classList.add("active", "border-orange-500", "text-orange-600", "bg-orange-50");
+
+        // 4. Checklist Data
+        const checklistData = [
+            { id: 'pass', text: '여권 (유효기간 6개월 이상)' },
+            { id: 'egate', text: '대만 E-Gate 온라인 입국신고' },
+            { id: 'money', text: '이중환전 (달러→대만달러) 준비' },
+            { id: 'volt', text: '110V 돼지코 어댑터' },
+            { id: 'rain', text: '우산/우비 (비가 자주 와요)' },
+            { id: 'sim', text: '유심/로밍 신청' }
+        ];
+
+        const container = document.getElementById('checklist-container');
+        checklistData.forEach(item => {
+            const label = document.createElement('label');
+            label.className = 'flex items-center p-3 bg-white rounded-lg border border-slate-200 hover:bg-orange-50 transition-colors cursor-pointer mb-2 select-none shadow-sm';
+            label.innerHTML = `
+                <input type="checkbox" id="${item.id}" class="w-5 h-5 text-orange-600 rounded border-gray-300 focus:ring-orange-500 cursor-pointer">
+                <span class="ml-3 text-slate-700 font-medium flex-grow">${item.text}</span>
+            `;
+            container.appendChild(label);
+            
+            // Simple LocalStorage Logic
+            const checkbox = label.querySelector('input');
+            const saved = localStorage.getItem('tm_taiwan_' + item.id);
+            if (saved === 'true') { 
+                checkbox.checked = true; 
+                label.classList.add('bg-orange-50', 'border-orange-200'); 
+            }
+            
+            checkbox.addEventListener('change', (e) => {
+                localStorage.setItem('tm_taiwan_' + item.id, e.target.checked);
+                if(e.target.checked) label.classList.add('bg-orange-50', 'border-orange-200'); 
+                else label.classList.remove('bg-orange-50', 'border-orange-200');
+            });
+        });
+    </script>
+</body>
+</html>
