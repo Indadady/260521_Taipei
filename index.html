@@ -18,6 +18,7 @@
     <meta property="og:title" content="[투어메이커] 대만/타이페이 4일 : 당신의 선택은?">
     <meta property="og:description" content="2026.05.21(목) 출발 | 아시아나(관광형) vs 대한항공(1일자유) | 노쇼핑 & 특식 포함">
     <meta property="og:image" content="https://media.gettyimages.com/id/1973430638/photo/scenery-of-raohe-street-night-market-with-a-crowd-of-people-visiting.jpg?s=612x612&w=0&k=20&c=oaMvGSCRNa6NEqMguGWY1r96si6uJjG08Mp0_h0sgFc=">
+    <!-- 🚨 URL Protocol Fixed to http:// for stability -->
     <meta property="og:url" content="http://tourmaker.kr">
 
     <!-- Tailwind CSS -->
@@ -47,6 +48,16 @@
         /* Comparison Cards */
         .card-vs { transition: all 0.3s ease; border: 1px solid rgba(234, 88, 12, 0.1); }
         .card-vs:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border-color: #ea580c; }
+
+        /* Notepad Style */
+        .notepad {
+            background-color: #fefce8; 
+            background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 100% 32px;
+            line-height: 32px;
+            border-top: 8px solid #f97316; /* Orange top border */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
 
         /* Scroll Anchor Offset */
         section { scroll-margin-top: 70px; }
@@ -130,14 +141,14 @@
             </div>
         </section>
 
-        <!-- 2. Comparison Section (With No Shopping Emphasis & Price Disclaimer) -->
+        <!-- 2. Comparison Section -->
         <section id="compare" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
                     <span class="text-orange-600 font-bold tracking-wider uppercase text-sm">Which Style?</span>
                     <h2 class="text-3xl font-bold mt-2 text-slate-800">나에게 맞는 여행 스타일은?</h2>
                     
-                    <!-- No Shopping Emphasis Banner (Added) -->
+                    <!-- No Shopping Emphasis Banner -->
                     <div class="mt-6 inline-flex items-center bg-red-50 border border-red-200 text-red-800 px-5 py-3 rounded-full shadow-sm">
                         <span class="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">공통 특전</span>
                         <span class="font-bold text-sm md:text-base"><i class="fa-solid fa-ban mr-1"></i>두 상품 모두 <span class="underline decoration-red-400 decoration-2 underline-offset-2">쇼핑센터 방문이 없는 '노쇼핑'</span> 상품입니다.</span>
@@ -149,7 +160,6 @@
                     <div class="card-vs bg-white rounded-2xl p-6 shadow-lg flex flex-col relative overflow-hidden group">
                         <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-bl-lg z-10">Best Seller</div>
                         <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden">
-                            <!-- A코스 사진 반영 -->
                             <img src="https://media.gettyimages.com/id/1973430638/photo/scenery-of-raohe-street-night-market-with-a-crowd-of-people-visiting.jpg?s=612x612&w=0&k=20&c=oaMvGSCRNa6NEqMguGWY1r96si6uJjG08Mp0_h0sgFc=" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Full Package">
                         </div>
                         <div class="flex justify-between items-center mb-4">
@@ -157,7 +167,6 @@
                             <span class="text-lg font-bold text-orange-600">949,900원~</span>
                         </div>
                         <ul class="space-y-3 text-sm text-slate-600 flex-grow mb-6">
-                            <!-- No Shopping Badge (Added) -->
                             <li class="flex items-center gap-2 bg-red-50 p-2 rounded-lg border border-red-100"><i class="fa-solid fa-thumbs-up text-red-500"></i> <strong class="text-red-700">전 일정 노쇼핑 (쇼핑강요 ZERO)</strong></li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-plane text-orange-500"></i> <strong>아시아나(OZ)</strong> 오전출발/오후리턴</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-orange-500"></i> 타오위안 4성급 호텔 (가성비)</li>
@@ -172,7 +181,6 @@
                     <div class="card-vs bg-white rounded-2xl p-6 shadow-lg flex flex-col relative overflow-hidden group">
                         <div class="absolute top-0 right-0 bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">City Hotel</div>
                         <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden">
-                            <!-- B코스 사진 반영 -->
                             <img src="https://media.gettyimages.com/id/804328234/photo/joyful-young-lady-taking-pictures-of-beautiful-scenics-in-park-with-smartphone-during-sunset.jpg?s=612x612&w=0&k=20&c=1aE5_EN0Ro1LsZ-FUnhYi4IY7pU9OHWbt4UB-Gm0zZc=" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Free Day">
                         </div>
                         <div class="flex justify-between items-center mb-4">
@@ -180,7 +188,6 @@
                             <span class="text-lg font-bold text-orange-600">1,039,900원~</span>
                         </div>
                         <ul class="space-y-3 text-sm text-slate-600 flex-grow mb-6">
-                            <!-- No Shopping Badge (Added) -->
                             <li class="flex items-center gap-2 bg-red-50 p-2 rounded-lg border border-red-100"><i class="fa-solid fa-thumbs-up text-red-500"></i> <strong class="text-red-700">전 일정 노쇼핑 (쇼핑강요 ZERO)</strong></li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-plane text-sky-500"></i> <strong>대한항공(KE)</strong> 오후출발/저녁리턴</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-sky-500"></i> <strong>타이페이 시내</strong> 4성급 (이동편리)</li>
@@ -192,7 +199,7 @@
                     </div>
                 </div>
 
-                <!-- Price Disclaimer (Added) -->
+                <!-- Price Disclaimer -->
                 <div class="max-w-5xl mx-auto mt-6">
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs md:text-sm text-slate-500 flex items-start gap-3">
                         <i class="fa-solid fa-circle-exclamation text-orange-500 mt-0.5 text-base"></i>
@@ -289,7 +296,7 @@
             </div>
         </section>
 
-        <!-- 4. Itinerary Timeline (With Mode Tour Links) -->
+        <!-- 4. Itinerary Timeline -->
         <section id="timeline" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-8">
@@ -437,7 +444,7 @@
 
                 </div>
 
-                <!-- Mode Tour Original Links (Added) -->
+                <!-- Mode Tour Original Links -->
                 <div class="max-w-3xl mx-auto mt-6">
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                         <div class="text-center mb-4">
@@ -479,21 +486,45 @@
             </div>
         </section>
 
-        <!-- 6. Checklist -->
+        <!-- 6. Checklist & Memo (Enhanced) -->
         <section id="check" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-10">
-                    <h2 class="text-2xl font-bold text-slate-800">여행 체크리스트</h2>
-                    <p class="text-sm text-slate-500 mt-1">대만 여행 필수 준비물 확인하기</p>
+                    <h2 class="text-2xl font-bold text-slate-800">여행 체크리스트 & 메모</h2>
+                    <p class="text-sm text-slate-500 mt-1">꼼꼼하게 챙기고, 잊지 않게 기록하세요.</p>
                 </div>
 
-                <div class="max-w-2xl mx-auto bg-orange-50 p-6 rounded-2xl border border-orange-200">
-                    <div id="checklist-container" class="space-y-3">
-                        <!-- Checkboxes inserted by JS -->
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Checklist Column -->
+                    <div class="bg-orange-50 p-6 rounded-2xl border border-orange-200 h-full">
+                         <h3 class="font-bold text-lg mb-4 text-slate-800 flex items-center">
+                            <i class="fa-solid fa-check-double text-orange-500 mr-2"></i>필수 준비물
+                         </h3>
+                         <div id="checklist-container" class="space-y-3">
+                            <!-- Checkboxes inserted by JS -->
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-orange-200 text-xs text-slate-500 leading-relaxed">
+                            <strong>💡 여행 꿀팁:</strong><br>
+                            - 대만은 한국과 전압이 다릅니다. (110V)<br>
+                            - 비가 자주 오니 작은 우산이나 우비를 챙기세요.<br>
+                            - 환전은 이중환전(USD→TWD)이 유리합니다.
+                        </div>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-orange-200 text-xs text-slate-500">
-                        <i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> 전압: 대만은 110V를 사용합니다. (돼지코 필수)<br>
-                        <i class="fa-solid fa-passport text-blue-500 mr-1"></i> 여권 유효기간: 출발일 기준 6개월 이상 필수
+
+                    <!-- Memo Column (Notepad) -->
+                    <div class="flex flex-col">
+                        <div class="bg-yellow-50 p-1 rounded-2xl border border-yellow-200 shadow-md flex-grow notepad">
+                            <div class="px-6 py-4 border-b border-yellow-200/50">
+                                <h3 class="font-bold text-lg text-slate-800 flex items-center">
+                                    <i class="fa-solid fa-pen-nib text-slate-600 mr-2"></i>여행 메모장
+                                </h3>
+                            </div>
+                            <textarea id="travel-memo" class="w-full h-[400px] md:h-[350px] bg-transparent p-6 text-slate-700 leading-8 resize-none focus:outline-none font-[Nanum Myeongjo]" placeholder="여권번호, 환전 금액, 쇼핑 리스트 등 중요한 내용을 기록하세요. (자동저장)"></textarea>
+                        </div>
+                        <div class="flex justify-between items-center mt-2 px-2">
+                             <span class="text-xs text-slate-400"><i class="fa-solid fa-rotate-right mr-1"></i>브라우저에 자동 저장됩니다.</span>
+                             <button onclick="document.getElementById('travel-memo').value=''; localStorage.removeItem('tm_taiwan_memo');" class="text-xs text-red-400 hover:text-red-600 transition-colors">지우기</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -598,14 +629,18 @@
         document.getElementById("day1").style.display = "block";
         document.getElementsByClassName("tab-btn")[0].classList.add("active", "border-orange-500", "text-orange-600", "bg-orange-50");
 
-        // 4. Checklist Data
+        // 4. Detailed Checklist Data
         const checklistData = [
-            { id: 'pass', text: '여권 (유효기간 6개월 이상)' },
-            { id: 'egate', text: '대만 E-Gate 온라인 입국신고' },
-            { id: 'money', text: '이중환전 (달러→대만달러) 준비' },
-            { id: 'volt', text: '110V 돼지코 어댑터' },
-            { id: 'rain', text: '우산/우비 (비가 자주 와요)' },
-            { id: 'sim', text: '유심/로밍 신청' }
+            { id: 'pass', text: '여권 (유효기간 6개월 이상 필수)' },
+            { id: 'egate', text: '온라인 입국신고서 (E-Gate) 작성' },
+            { id: 'ticket', text: 'E-티켓 및 호텔 바우처 캡처/인쇄' },
+            { id: 'money', text: '환전 (USD→TWD) 또는 트래블로그 카드' },
+            { id: 'sim', text: '데이터 준비 (유심 / 이심 / 로밍)' },
+            { id: 'volt', text: '110V 돼지코 어댑터 (필수)' },
+            { id: 'rain', text: '3단 우산 또는 우비 (비가 자주 옴)' },
+            { id: 'battery', text: '보조배터리 (위탁수하물 불가)' },
+            { id: 'meds', text: '개인 상비약 (소화제, 두통약, 밴드)' },
+            { id: 'app', text: '필수 앱 설치 (구글맵, 파파고, 우버)' }
         ];
 
         const container = document.getElementById('checklist-container');
@@ -614,11 +649,11 @@
             label.className = 'flex items-center p-3 bg-white rounded-lg border border-slate-200 hover:bg-orange-50 transition-colors cursor-pointer mb-2 select-none shadow-sm';
             label.innerHTML = `
                 <input type="checkbox" id="${item.id}" class="w-5 h-5 text-orange-600 rounded border-gray-300 focus:ring-orange-500 cursor-pointer">
-                <span class="ml-3 text-slate-700 font-medium flex-grow">${item.text}</span>
+                <span class="ml-3 text-slate-700 font-medium flex-grow text-sm md:text-base">${item.text}</span>
             `;
             container.appendChild(label);
             
-            // Simple LocalStorage Logic
+            // Simple LocalStorage Logic for Checklist
             const checkbox = label.querySelector('input');
             const saved = localStorage.getItem('tm_taiwan_' + item.id);
             if (saved === 'true') { 
@@ -631,6 +666,14 @@
                 if(e.target.checked) label.classList.add('bg-orange-50', 'border-orange-200'); 
                 else label.classList.remove('bg-orange-50', 'border-orange-200');
             });
+        });
+
+        // 5. Memo Logic
+        const memo = document.getElementById('travel-memo');
+        const MEMO_KEY = 'tm_taiwan_memo';
+        memo.value = localStorage.getItem(MEMO_KEY) || '';
+        memo.addEventListener('input', function() {
+            localStorage.setItem(MEMO_KEY, this.value);
         });
     </script>
 </body>
